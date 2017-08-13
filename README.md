@@ -1,6 +1,5 @@
-# sell
+﻿# webapp项目（移动端）
 
-> sell app
 
 ## Build Setup
 
@@ -17,6 +16,6 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-挺好
-
+## 项目预览:
+![](er.png)
 
