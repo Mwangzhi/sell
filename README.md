@@ -17,5 +17,5 @@ npm run build
 npm run build --report
 ```
 ## 项目预览:
-![](er.png)
+![a](https://raw.githubusercontent.com/Mwangzhi/sell/master/er.png)
 
