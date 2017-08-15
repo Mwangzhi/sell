@@ -1,21 +1,61 @@
-﻿# webapp项目（移动端）
-
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
+﻿# 基于vue2.0+vue-router+localStorage开发的webapp
+>该项目采用vue2.0、vue-router、localStorage、axios，实现一个移动端单页应用。
+>主要有一下几个页面:
+>- 商品页
+>- 商品详情页
+>- 评论页
+>- 商家页
+>- 商家公告页
+>- 购物车页
+>[在线预览地址](https://mwangzhi.github.io/)
+## 安装步骤
+本项目是使用vue-cli脚手架生成的项目，项目代码可以到我的github上clone下来，具体步骤如下：
+**克隆项目**
 ```
-## 项目预览:
+git clone https://github.com/Mwangzhi/sell.git
+```
+**进入项目**
+```
+cd sell
+```
+**安装依赖**
+```
+npm install
+```
+**启动项目**
+```
+npm run dev
+```
+>PC端查看，建议调成移动端模式，效果更佳
+## 主要难点
+#### 1、商品页面
+难点:左侧导航区和右侧列表区实现联动效果
+解决办法：维护一个高度数组，用以存放列表区每一个区块距离顶部的高度，当点击导航区具体某一个导航菜单时，通过索引找到对应的列表区块，反之亦然。
+#### 2、父子组件间通信
+知识点：组件实例的作用域是孤立的。这意味着不能并且不应该在子组件的模板内直接引用父组件的数据。
+```
+1）父组件可以使用 props 把数据传给子组件。
+2）子组件可以使用 $emit 触发父组件的自定义事件。
+3）当数据结构比较复杂时，可以考虑使用vuex
+```
+#### 3、本地存储
+知识点：localStorage是HTML5提供的一种在客户端存储数据的新方法，没有时间限制，第二天、第二周或下一年之后，数据依然可用。
+用法：
+```
+1）存储数据：localStorage.setItem(item, value)
+2）获取数据：localStorage.getItem(item)
+3）移除数据：localStorage.removeItem(item)
+4)清除所有:localStorage.clear()
+```
+#### 4、其他
+- 移动端1像素边框的实现
+- css sticky footer 布局
+- 星星评分组件的实现。
+## 总结
+用了大概一周的时间，从零开始学习vue到最后完成这个项目，收获很大。
+- 组件化开发。把项目中多次用到的部分封装成一个组件，其他地方只需要调用即可，真正的提高了开发效率。比如本项目中复用的组件：1、左边星星右边分数的评分组件 2、添加删除商品的组件（就是加号减号那个）3、评论头部组件。
+- 封装组件的时候，要定义好props，写好文档，将封装的组件与外部解耦，不要有副作用，方便团队协同开发，降低维护成本
+- 开发过程中几乎没有操作过DOM，需要我关心的就是：数据是如何流动的，在哪里发生变化，发生变化后是否要通知父组件。
+## 手机扫一扫预览项目:
 ![a](https://raw.githubusercontent.com/Mwangzhi/sell/master/er.png)
 
