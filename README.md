@@ -7,7 +7,8 @@
 >- 商家页
 >- 商家公告页
 >- 购物车页
->[在线预览地址](https://mwangzhi.github.io/)
+
+[在线预览地址](https://mwangzhi.github.io/)
 ## 安装步骤
 本项目是使用vue-cli脚手架生成的项目，项目代码可以到我的github上clone下来，具体步骤如下：
 **克隆项目**
